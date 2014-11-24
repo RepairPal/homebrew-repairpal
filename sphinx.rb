@@ -1,5 +1,7 @@
 require 'formula'
 
+# Formula based on: https://raw.githubusercontent.com/Homebrew/homebrew/a03e0900f1fe419e792bbfdd1777f3ca42ab417f/Library/Formula/sphinx.rb
+
 # At present (2014-11-24), we need to use Sphinx 2.1.9 because we're on an
 # archaic version of ThinkingSphinx that breaks on newer versions.
 # Unfortunately, libstemmer seems to have been updated upstream and started
