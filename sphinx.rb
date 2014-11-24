@@ -1,5 +1,9 @@
 require 'formula'
 
+# At present (2014-11-24), we need to use Sphinx 2.1.9 because we're on an
+# archaic version of ThinkingSphinx that breaks on newer versions.
+# Unfortunately, libstemmer seems to have been updated upstream and started
+# breaking builds of 2.1.9.  So, we lock libstemmer to a working version here.
 class Sphinx < Formula
   homepage 'http://www.sphinxsearch.com'
   url 'http://sphinxsearch.com/files/sphinx-2.1.9-release.tar.gz'
