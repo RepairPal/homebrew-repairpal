@@ -34,7 +34,8 @@ class Sphinx < Formula
   depends_on :postgresql if build.include? 'pgsql'
 
   resource 'stemmer' do
-    url 'https://github.com/RepairPal/sphinx-2.1.9-setup/raw/master/libstemmer_c.tgz'
+    # Keep this in the repo so it's maintained in lockstep with this formula.
+    url 'file://' + Pathname.new(File.expand_path('..', __FILE__))/'libstemmer_c.tgz'
     sha1 '1ac6bb16e829e9f3a58f62c27047c26784975aa1'
   end
 
