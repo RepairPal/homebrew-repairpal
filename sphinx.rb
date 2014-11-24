@@ -27,9 +27,8 @@ class Sphinx < Formula
   depends_on :mysql if build.include? 'mysql'
   depends_on :postgresql if build.include? 'pgsql'
 
-  # http://snowball.tartarus.org/
   resource 'stemmer' do
-    url 'http://snowball.tartarus.org/dist/libstemmer_c.tgz'
+    url 'https://github.com/RepairPal/sphinx-2.1.9-setup/raw/master/libstemmer_c.tgz'
     sha1 '1ac6bb16e829e9f3a58f62c27047c26784975aa1'
   end
 
