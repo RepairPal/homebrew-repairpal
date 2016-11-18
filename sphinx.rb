@@ -9,6 +9,7 @@ require 'formula'
 class Sphinx < Formula
   homepage 'http://www.sphinxsearch.com'
   url 'http://sphinxsearch.com/files/sphinx-2.1.9-release.tar.gz'
+  sha256 '6289aa0ac3e1456a0c9181ce6bce2287778b5a163f685a1376e181fc87eb7c03'
 
   head 'http://sphinxsearch.googlecode.com/svn/trunk/'
 
@@ -31,6 +32,7 @@ class Sphinx < Formula
   resource 'stemmer' do
     # Keep this in the repo so it's maintained in lockstep with this formula.
     url 'file://' + Pathname.new(File.expand_path('..', __FILE__))/'libstemmer_c.tgz'
+    sha256 '6530c3638f29f5b03bc3786bb9212e39adaf3bf15b5b0a483b2eb5111f7f416e'
   end
 
   fails_with :llvm do
