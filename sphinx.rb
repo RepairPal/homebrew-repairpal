@@ -9,20 +9,15 @@ require 'formula'
 class Sphinx < Formula
   homepage 'http://www.sphinxsearch.com'
   url 'http://sphinxsearch.com/files/sphinx-2.1.9-release.tar.gz'
-  sha1 '2ddd945eb0a7de532a7aaed2e933ac05b978cff2'
 
   head 'http://sphinxsearch.googlecode.com/svn/trunk/'
 
   bottle do
     revision 1
-    sha1 "bedd71d9e8a0691e2e4bbfef057f6d87a6a7fe28" => :mavericks
-    sha1 "ba05b267136faff945b2370b81907c87c4126341" => :mountain_lion
-    sha1 "8c6351384d69e982527b71ca6162cc8fd680c2ec" => :lion
   end
 
   devel do
     url 'http://sphinxsearch.com/files/sphinx-2.2.3-beta.tar.gz'
-    sha1 'ef78cebeae32a0582df504d74d6dd2ded81b73d9'
   end
 
   option 'mysql', 'Force compiling against MySQL'
@@ -36,7 +31,6 @@ class Sphinx < Formula
   resource 'stemmer' do
     # Keep this in the repo so it's maintained in lockstep with this formula.
     url 'file://' + Pathname.new(File.expand_path('..', __FILE__))/'libstemmer_c.tgz'
-    sha1 '1ac6bb16e829e9f3a58f62c27047c26784975aa1'
   end
 
   fails_with :llvm do
