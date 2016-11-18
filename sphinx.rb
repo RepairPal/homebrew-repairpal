@@ -66,7 +66,8 @@ class Sphinx < Formula
       args << "--with-mysql"
       args << "--with-mysql-includes=/usr/local/opt/#{dist}/include/mysql"
       args << "--with-mysql-libs=/usr/local/opt/#{dist}/lib"
-    elsif build.include? "pgsql"
+    end
+    if build.include? "pgsql"
       args << "--with-pgsql"
     end
 
