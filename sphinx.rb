@@ -61,12 +61,13 @@ class Sphinx < Formula
     args << "--enable-id64" if build.include? 'id64'
     args << "--with-re2" if build.with? 're2'
 
-    %w{mysql pgsql}.each do |db|
-      if build.include? db
-        args << "--with-#{db}"
-      else
-        args << "--without-#{db}"
-      end
+    if build.include? "mysql"
+      dist = File.exist?("/usr/local/opt/mariadb") ? "mariadb" : "mysql"
+      args << "--with-mysql"
+      args << "--with-mysql-includes=/usr/local/opt/#{dist}/include/mysql"
+      args << "--with-mysql-libs=/usr/local/opt/#{dist}/lib"
+    elsif build.include? "pgsql"
+      args << "--with-pgsql"
     end
 
     system "./configure", *args
